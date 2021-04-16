@@ -30,3 +30,15 @@ def encrypt(text,s):
         result += chr((ord(character) + s-65) % 26 + 65)
     for i in result:
         final.append(i)
+    space = 4
+    q = 0
+    while q < len(final):
+        if q < 3:
+            space = 5
+        else:
+            space = space + 2
+        final.insert(space, " ")
+        space += 4
+        q += 4
+    return str.join(final)
+print(encrypt(text, s))
